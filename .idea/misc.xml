@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Black">
     <option name="pathToExecutable" value="C:\Users\jenny\anaconda3\Scripts\black.exe" />
+    <option name="sdkName" value="Remote Python 3.12.9 Docker Compose (django)" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />

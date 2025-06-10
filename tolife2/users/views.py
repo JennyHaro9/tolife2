@@ -16,6 +16,10 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     slug_url_kwarg = "id"
 
 
+    def get_context_data(self, **kwargs):
+        pass
+
+
 
 user_detail_view = UserDetailView.as_view()
 
