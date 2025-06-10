@@ -16,11 +16,6 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     slug_url_kwarg = "id"
 
 
-    def get_context_data(self, **kwargs):
-        pass
-
-
-
 user_detail_view = UserDetailView.as_view()
 
 
@@ -33,7 +28,7 @@ class UserUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         assert self.request.user.is_authenticated  # type guard
         return self.request.user.get_absolute_url()
 
-    def get_object(self, queryset: QuerySet | None=None) -> User:
+    def get_object(self, queryset: QuerySet | None = None) -> User:
         assert self.request.user.is_authenticated  # type guard
         return self.request.user
 

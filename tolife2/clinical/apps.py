@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 
+
 class ClinicalConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'tolife2.clinical'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "tolife2.clinical"
