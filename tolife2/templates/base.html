@@ -21,7 +21,8 @@
   <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}" />
   {% block css %}
 <!-- Your stuff: Third-party CSS libraries go here -->
-    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
 <!-- This file stores project-specific CSS -->
 
 
@@ -129,6 +130,7 @@
       });
     </script>
     {% endcomment %}
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
   {% endblock inline_javascript %}
 </body>
 </html>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <h2>Datos clínicos del paciente: {{ patient.name }} ({{ patient.user_id }})</h2>
+
+    <h4>Fecha del estudio: {{ patient.date_of_study }}</h4>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Valor</th>
+          <th>Unidad</th>
+          <th>Fecha de Registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for var in variables %}
+        <tr>
+          <td>{{ var.variable_name }}</td>
+          <td>{{ var.value }}</td>
+          <td>{{ var.unit }}</td>
+          <td>{{ var.date_recorded }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="4">No hay datos clínicos registrados para este paciente.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="{% url 'clinical:patient_list' %}" class="btn btn-secondary">Volver a la lista</a>
+  </div>
+{% endblock %}
