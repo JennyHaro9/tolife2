@@ -87,7 +87,6 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "tolife2.clinical",
     "tolife2.users",
     # Your stuff: custom apps go here
 ]
