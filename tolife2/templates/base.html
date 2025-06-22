@@ -22,6 +22,7 @@
       <link rel="stylesheet" href="{% static 'css/bootstrap-icons.min.css' %}" />
     {% endblock css %}
     {% block javascript %}
+      <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.5/dist/htmx.min.js"></script>
     {% endblock javascript %}
     <style>
       body {
@@ -148,7 +149,7 @@
             {% endif %}
             {% block main %}
               {% block content %}
-                <p>Replace this block in your template.</p>
+                <div id="id-main-content"></div>
               {% endblock content %}
             {% endblock main %}
           </main>
