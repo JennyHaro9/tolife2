@@ -1,23 +1,26 @@
 import json
 from datetime import timedelta
 
-from django.contrib.auth.decorators import login_required
 from django.core.serializers.json import DjangoJSONEncoder
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from django.utils import timezone
+from django_tables2 import SingleTableView
 
 from .models import ClinicalParameter
 from .models import Patient
+from .tables import PatientTable
 
 
-@login_required
-def patients_list(request):
-    patients = Patient.objects.all()
-    return render(request, "patients/patients_list.html", {"patients": patients})
+class PatientListView(SingleTableView):
+    model = Patient
+    template_name = "patient/patient_list.html"
+    table_class = PatientTable
 
 
-@login_required
+patient_list_view = PatientListView.as_view()
+
+
 def patient_detail_view(request, patient_id):  # noqa: C901
     patient = get_object_or_404(Patient, pk=patient_id)
 
