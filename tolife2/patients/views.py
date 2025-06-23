@@ -1,31 +1,16 @@
-from typing import Any
-
 from django.urls import reverse_lazy
 from django.views.generic.base import TemplateView
-from django_tables2 import SingleTableMixin
+
+from tolife2.utils.views import TableView
 
 from .tables import PatientTable
 
 
-class PatientListView(SingleTableMixin, TemplateView):
-    template_name = "patient/patient_list.html"
-    partial_template_name = "design_system/organisms/partial_table.html"
+class PatientListView(TableView):
     table_class = PatientTable
     table_url = reverse_lazy("patients:patient_list")
     section = "patients"
-
-    def get_template_names(self):
-        return self.partial_template_name if self.request.htmx else self.template_name
-
-    def get_table_kwargs(self):
-        kwargs = super().get_table_kwargs()
-        kwargs.update(hx_table_url=self.table_url)
-        return kwargs
-
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
-        context = super().get_context_data(**kwargs)
-        context.update(section=self.section)
-        return context
+    title = "Patients"
 
     def get_table_data(self):
         return [
