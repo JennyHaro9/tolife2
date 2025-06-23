@@ -1,10 +1,12 @@
 import django_tables2 as tables
-
-from tolife2.patients.models import Patient
+from django_tables2.utils import A
 
 
 class PatientTable(tables.Table):
+    name = tables.Column()
+    identifier = tables.LinkColumn("patients:patient_detail", args=[A("id")])
+    doctor = tables.Column()
+
     class Meta:
-        model = Patient
         fields = ("name", "identifier", "doctor")
-        template_name = "django_tables2/bootstrap5-responsive.html"
+        template_name = "design_system/organisms/bootstrap_responsive_table.html"

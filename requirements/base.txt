@@ -20,7 +20,7 @@ crispy-bootstrap5==2025.4  # https://github.com/django-crispy-forms/crispy-boots
 django-redis==5.4.0  # https://github.com/jazzband/django-redis
 django-filter==25.1 # https://django-filter.readthedocs.io/
 django-tables2==2.7.5 # https://django-tables2.readthedocs.io/
-
+django-htmx==1.23.1 # https://django-htmx.readthedocs.io/
 
 # Django REST Framework
 djangorestframework==3.16.0  # https://github.com/encode/django-rest-framework

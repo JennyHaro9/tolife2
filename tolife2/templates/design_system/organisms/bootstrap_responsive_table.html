@@ -1,0 +1,12 @@
+{% extends 'design_system/organisms/bootstrap_base_table.html' %}
+
+{% block table-wrapper %}
+  <div class="table-container table-responsive">
+    {% block table %}
+      {{ block.super }}
+    {% endblock table %}
+    {% block pagination %}
+      {{ block.super }}
+    {% endblock pagination %}
+  </div>
+{% endblock table-wrapper %}

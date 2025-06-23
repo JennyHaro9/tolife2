@@ -85,6 +85,7 @@ THIRD_PARTY_APPS = [
     "drf_spectacular",
     "webpack_loader",
     "django_tables2",
+    "django_htmx",
 ]
 
 LOCAL_APPS = [
@@ -148,6 +149,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
 ]
 
 # STATIC
